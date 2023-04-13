@@ -1,7 +1,7 @@
-import { createStore } from 'redux';    // On importe createStore depuis redux
+import { createStore } from "redux";
 
-import reducer from './reducer';        // On importe notre fonction reducer
+import reducer from './reducer';
 
-const store = createStore(reducer);     // On créé un store et on lui passe notre reducer en argument
+const store = createStore(reducer);
 
 export default store;
