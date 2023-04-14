@@ -18,13 +18,15 @@ const initialState = {
       content: "Stp",
     }
   ],
-  inputValue: ''
+  inputValue: '',
+  settingsDisplayed: false
 }
 
 const chatReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case "CHANGE_INPUT_VALUE":
       return {...state, inputValue: action.newValue}
+
 
     case "ADD_MESSAGE":
       const newMessage = {
@@ -36,6 +38,12 @@ const chatReducer = (state = initialState, action = {}) => {
       const newArray = [...state.messages, newMessage];
 
       return { ...state, messages: newArray, inputValue: '' };
+
+
+
+      case "TOGGLE_DISPLAY_SETTINGS":
+        return {...state, settingsDisplayed: !state.settingsDisplayed};
+        
 
     default:
       return state;

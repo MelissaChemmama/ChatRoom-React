@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Send } from "react-feather";
 import { addInputValue, addMessage } from "../../actions/chat";
-
 import './styles.scss';
 
 /** Je veux pouvoir envoyer un message dans le chat

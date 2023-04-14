@@ -1,0 +1,29 @@
+@use "../../styles/vars";
+
+.settingsform {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 30px;
+  width: 200px;
+  margin-top: 2rem;
+  padding-right: 1rem;
+  padding-left: 2rem;
+}
+
+.settingsform input {
+  background-color: #fff;
+  border-radius: 0.4rem;
+  color: #3999d6;
+  display: inline-block;
+  margin-top: 0.4rem;
+  padding: 0.4rem 0.4rem;
+}
+
+.settingsform button {
+  background-color: vars.$mediumColor;
+  color: #fff;
+  margin-top: 0.4rem;
+  border-radius: 0.4rem;
+
+}
