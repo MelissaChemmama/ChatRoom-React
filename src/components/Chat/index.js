@@ -3,7 +3,7 @@
 import Form from '../Form'
 import Messages from '../Messages';
 import SettingsForm from '../Settings';
-import { PlusCircle } from "react-feather";
+import { PlusCircle, XCircle } from "react-feather";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSettingsDisplay } from "../../actions/chat";
 
@@ -15,10 +15,20 @@ const Chat= ()  => {
 
   return (
     <>
+{/* Si toggle display est False, alors j'affiche le plus, sinon j'affiche la croix et le form. */}
 
-    <PlusCircle className='btn-plus' onClick={() => { dispatch(toggleSettingsDisplay()) }} size={35} />
-    {toggleDisplay && <SettingsForm />} 
-    {/* Si toggleDisplay est true alors on affiche le formulaire du setting */}
+{
+(toggleDisplay != true)
+          ?  
+          // Alors
+          <PlusCircle className='btn-plus' onClick={() => { dispatch(toggleSettingsDisplay()) }} size={35} />
+          :
+          // sinon
+          <>
+            <XCircle className='btn-plus' onClick={() => { dispatch(toggleSettingsDisplay()) }} size={35} />
+            <SettingsForm />
+          </>
+      }
     <div className='chat'>
       <Messages />
       <Form />
